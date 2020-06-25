@@ -123,6 +123,50 @@
           }
         }
       }
-    }},
-  "defaultProject": "cdk-popup"
+    },
+    "popup": {
+      "projectType": "library",
+      "root": "projects/popup",
+      "sourceRoot": "projects/popup/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/popup/tsconfig.lib.json",
+            "project": "projects/popup/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/popup/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/popup/src/test.ts",
+            "tsConfig": "projects/popup/tsconfig.spec.json",
+            "karmaConfig": "projects/popup/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/popup/tsconfig.lib.json",
+              "projects/popup/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "cdk-popup",
+  "cli": {
+    "analytics": false
+  }
 }

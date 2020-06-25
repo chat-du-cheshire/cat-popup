@@ -1,6 +1,8 @@
-# CdkPopup
+# CatPopup
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.9.
+
+Simple popup plugin based on [AngularCdk](https://material.angular.io/cdk/categories) and inspired by @netbasal [article](https://netbasal.com/creating-powerful-components-with-angular-cdk-2cef53d81cea) 
 
 ## Development server
 

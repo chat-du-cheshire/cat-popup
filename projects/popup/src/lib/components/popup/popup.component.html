@@ -1,0 +1,15 @@
+<div class="popover">
+  <ng-container [ngSwitch]="renderMethod">
+
+    <div *ngSwitchCase="rendererType.Text">{{content}}</div>
+
+    <ng-container *ngSwitchCase="rendererType.Template">
+      <ng-container *ngTemplateOutlet="content; context: context"></ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="rendererType.Component">
+      <ng-container *ngComponentOutlet="content"></ng-container>
+    </ng-container>
+
+  </ng-container>
+</div>
